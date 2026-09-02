@@ -5,17 +5,17 @@ import { formatRupiah, formatDateTimeIndonesian } from '../utils/formatters';
 import { sounds } from '../utils/sound';
 import { useLanguage } from '../i18n/LanguageContext';
 
-interface ReceiptModalProps {
+export interface ReceiptModalProps {
   transaction: Transaction | null;
   storeProfile: StoreProfile;
   onClose: () => void;
 }
 
-export const ReceiptModal: React.FC<ReceiptModalProps> = ({
+export const ReceiptModal = ({
   transaction,
   storeProfile,
   onClose,
-}) => {
+}: ReceiptModalProps) => {
   const { t, language } = useLanguage();
   const [copied, setCopied] = useState<boolean>(false);
 

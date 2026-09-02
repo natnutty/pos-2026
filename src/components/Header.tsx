@@ -17,7 +17,7 @@ import { sounds } from '../utils/sound';
 import { formatRupiah } from '../utils/formatters';
 import { useLanguage } from '../i18n/LanguageContext';
 
-interface HeaderProps {
+export interface HeaderProps {
   activeTab: 'pos' | 'inventory' | 'transactions' | 'reports';
   setActiveTab: (tab: 'pos' | 'inventory' | 'transactions' | 'reports') => void;
   openSettings: () => void;
@@ -26,14 +26,14 @@ interface HeaderProps {
   todayTxCount: number;
 }
 
-export const Header: React.FC<HeaderProps> = ({
+export const Header = ({
   activeTab,
   setActiveTab,
   openSettings,
   storeProfile,
   todayRevenue,
   todayTxCount,
-}) => {
+}: HeaderProps) => {
   const { language, setLanguage, t } = useLanguage();
   const [isOnline, setIsOnline] = useState<boolean>(navigator.onLine);
   const [soundActive, setSoundActive] = useState<boolean>(true);

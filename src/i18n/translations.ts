@@ -550,6 +550,7 @@ export const translations = {
     noInventoryData: 'No menu items match your criteria.',
     noMatchingMenuCriteria: 'No menu items match your criteria.',
     stockLogsTitle: 'Real-Time Stock Mutation Logs',
+    stockMutationLogTitle: 'Real-Time Stock Mutation Logs',
     stockLogsShowing: 'recent records',
     showingLogsCount: 'Showing records:',
     colLogTime: 'Timestamp',

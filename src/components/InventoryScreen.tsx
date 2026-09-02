@@ -21,7 +21,7 @@ import { formatRupiah, formatNumber, getCategoryLabel, formatDateTimeIndonesian 
 import { sounds } from '../utils/sound';
 import { useLanguage } from '../i18n/LanguageContext';
 
-interface InventoryScreenProps {
+export interface InventoryScreenProps {
   menuItems: MenuItem[];
   stockLogs: StockLog[];
   onAddMenuItem: (item: MenuItem) => void;
@@ -31,7 +31,7 @@ interface InventoryScreenProps {
   onResetDefaultMenu: () => void;
 }
 
-export const InventoryScreen: React.FC<InventoryScreenProps> = ({
+export const InventoryScreen = ({
   menuItems,
   stockLogs,
   onAddMenuItem,
@@ -39,7 +39,7 @@ export const InventoryScreen: React.FC<InventoryScreenProps> = ({
   onDeleteMenuItem,
   onAdjustStock,
   onResetDefaultMenu,
-}) => {
+}: InventoryScreenProps) => {
   const { language, t, getUnitName, getReasonLabel } = useLanguage();
   const [activeTab, setActiveTab] = useState<'inventory' | 'logs'>('inventory');
   const [searchQuery, setSearchQuery] = useState<string>('');

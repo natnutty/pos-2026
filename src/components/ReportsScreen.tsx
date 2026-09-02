@@ -20,15 +20,15 @@ import { formatRupiah, formatNumber, getCategoryLabel, formatDateIndonesian } fr
 import { sounds } from '../utils/sound';
 import { useLanguage } from '../i18n/LanguageContext';
 
-interface ReportsScreenProps {
+export interface ReportsScreenProps {
   transactions: Transaction[];
   storeProfile: StoreProfile;
 }
 
-export const ReportsScreen: React.FC<ReportsScreenProps> = ({
+export const ReportsScreen = ({
   transactions,
   storeProfile,
-}) => {
+}: ReportsScreenProps) => {
   const { language, t } = useLanguage();
   const [period, setPeriod] = useState<ReportPeriod>('today');
   const [customStartDate, setCustomStartDate] = useState<string>('');

@@ -22,17 +22,17 @@ import { sounds } from '../utils/sound';
 import { ReceiptModal } from './ReceiptModal';
 import { useLanguage } from '../i18n/LanguageContext';
 
-interface TransactionsScreenProps {
+export interface TransactionsScreenProps {
   transactions: Transaction[];
   storeProfile: StoreProfile;
   onCancelTransaction: (txId: string, restoreStock: boolean) => void;
 }
 
-export const TransactionsScreen: React.FC<TransactionsScreenProps> = ({
+export const TransactionsScreen = ({
   transactions,
   storeProfile,
   onCancelTransaction,
-}) => {
+}: TransactionsScreenProps) => {
   const { language, t } = useLanguage();
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [methodFilter, setMethodFilter] = useState<PaymentMethod | 'all'>('all');

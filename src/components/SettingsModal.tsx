@@ -17,19 +17,19 @@ import { StorageService } from '../utils/storage';
 import { sounds } from '../utils/sound';
 import { useLanguage } from '../i18n/LanguageContext';
 
-interface SettingsModalProps {
+export interface SettingsModalProps {
   storeProfile: StoreProfile;
   onUpdateStoreProfile: (profile: StoreProfile) => void;
   onResetAllData: () => void;
   onClose: () => void;
 }
 
-export const SettingsModal: React.FC<SettingsModalProps> = ({
+export const SettingsModal = ({
   storeProfile,
   onUpdateStoreProfile,
   onResetAllData,
   onClose,
-}) => {
+}: SettingsModalProps) => {
   const { t, language } = useLanguage();
   const [profile, setProfile] = useState<StoreProfile>({ ...storeProfile });
   const [isSaved, setIsSaved] = useState<boolean>(false);

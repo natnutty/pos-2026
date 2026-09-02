@@ -19,17 +19,17 @@ import { sounds } from '../utils/sound';
 import { PaymentModal } from './PaymentModal';
 import { useLanguage } from '../i18n/LanguageContext';
 
-interface POSScreenProps {
+export interface POSScreenProps {
   menuItems: MenuItem[];
   storeProfile: StoreProfile;
   onCompleteTransaction: (tx: Transaction) => void;
 }
 
-export const POSScreen: React.FC<POSScreenProps> = ({
+export const POSScreen = ({
   menuItems,
   storeProfile,
   onCompleteTransaction,
-}) => {
+}: POSScreenProps) => {
   const { language, t, getUnitName } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState<Category | 'all'>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');

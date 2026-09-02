@@ -17,7 +17,7 @@ import { formatRupiah, formatNumber } from '../utils/formatters';
 import { sounds } from '../utils/sound';
 import { useLanguage } from '../i18n/LanguageContext';
 
-interface PaymentModalProps {
+export interface PaymentModalProps {
   cart: CartItem[];
   subtotal: number;
   storeProfile: StoreProfile;
@@ -28,7 +28,7 @@ interface PaymentModalProps {
   onCompleteTransaction: (transaction: Transaction) => void;
 }
 
-export const PaymentModal: React.FC<PaymentModalProps> = ({
+export const PaymentModal = ({
   cart,
   subtotal,
   storeProfile,
@@ -37,7 +37,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
   customerName: initialCustomerName,
   onClose,
   onCompleteTransaction,
-}) => {
+}: PaymentModalProps) => {
   const { t } = useLanguage();
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>('cash');
   const [orderType, setOrderType] = useState<OrderType>(initialOrderType);
