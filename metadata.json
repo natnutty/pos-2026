@@ -1,0 +1,6 @@
+{
+  "name": "Angkringan POS - Kasir & Stok",
+  "description": "Aplikasi Kasir POS & Manajemen Stok Real-Time untuk Kedai Angkringan dengan dukungan offline dan laporan analisis penjualan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
